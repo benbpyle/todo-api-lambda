@@ -1,0 +1,19 @@
+[package]
+name = "todo-lambda-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+lambda_runtime = "0.9.0"
+serde = "1.0.136"
+tokio = { version = "1", features = ["macros"] }
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3", features = ["json", "env-filter", "registry"] }
+opentelemetry-stdout = { version = "0.2.0", features = ["trace"] }
+opentelemetry = { version = "=0.21", default-features = false, features = [ "trace" ]}
+opentelemetry-otlp = { version = "=0.14", features = ["reqwest-client", "reqwest-rustls", "http-proto", "tls"]}
+opentelemetry_sdk = { version = "0.21.1", features = ["rt-tokio"] }
+tracing-opentelemetry = "0.22"
