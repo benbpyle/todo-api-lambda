@@ -25,7 +25,7 @@ Resources:
         Variables:
           RUST_LOG: debug
           APP_LOG: todo_lambda_api=debug
-          DD_API_KEY: 672ea37ed85efc33fb8b31758b569cfc
+          DD_API_KEY: abc
           DD_SERVICE: todo
           DD_TRACE_DEBUG: true
           DD_LOG_LEVEL: debug
