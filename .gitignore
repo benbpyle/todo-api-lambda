@@ -224,3 +224,4 @@ $RECYCLE.BIN/
 .aws-sam
 
 node_modules
+cdk.out

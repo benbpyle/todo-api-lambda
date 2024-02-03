@@ -12,7 +12,7 @@ export default class FunctionConstruct extends Construct {
             architecture: Architecture.ARM_64,
             environment: {
                 APP_LOG: 'todo_lambda_api=debug',
-                DD_API_KEY: '672ea37ed85efc33fb8b31758b569cfc',
+                DD_API_KEY: '<your key>',
                 DD_TRACE_OTEL_ENABLED: 'true',
                 DD_ENV: 'local',
                 DD_OTLP_CONFIG_RECEIVER_PROTOCOLS_GRPC_ENDPOINT: 'localhost:4317'

@@ -20,10 +20,29 @@ struct Response {
     body: String,
 }
 
+#[instrument(name = "do_some_work")]
+fn do_some_work() {
+    info!("Doing some work");
+}
+
+#[instrument(name = "do_some_more_work")]
+fn do_some_more_work() {
+    info!("Doing some more work");
+}
+
+#[instrument(name = "do_some_nested_work")]
+fn do_some_nested_work(){
+    do_some_more_work()
+}
+
 #[instrument(name = "handler")]
 async fn function_handler(_event: LambdaEvent<Request>) -> Result<Response, Error> {
     info!("{:?}", "An Info Message".to_string());
 
+    do_some_work();
+    do_some_more_work();
+    do_some_nested_work();
+    
     // Prepare the response
     let resp = Response {
         status_code: 200,
